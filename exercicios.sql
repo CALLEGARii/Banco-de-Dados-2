@@ -62,3 +62,35 @@ where idCurso = 3;
 
 update aluno set nome = 'Ana Paula'
 where prontuario = '11gg';
+
+-- exercicios Cidade Brasil --
+
+-- 1 --
+UPDATE cidade 
+SET populacao = 900000
+WHERE nomeCidade = 'Campo Grande';
+
+-- 2 --
+UPDATE cidade 
+SET idh = 0.81
+WHERE nomeCidade = 'Palmas';
+
+-- 3 --
+UPDATE cidade 
+SET idhm = 0.77, escolarizacao = 0.96
+WHERE nomeCidade = 'Salvador';
+
+-- 4 -- 
+DELETE FROM cidade 
+WHERE idhm < 0.6;
+
+-- 5 --
+DELETE FROM cidade 
+WHERE populacao < 20000;
+
+-- 6 --
+DELETE FROM cidade 
+WHERE idhm < 0.7 
+AND regiao = 'Sudeste';
+
+----- 
