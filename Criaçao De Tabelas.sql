@@ -19,6 +19,7 @@ create table atorEstrelaFilme
 (
 	idAtor integer,
 	codFilme integer,
+	constraint pk_estrela primary key (idAtor, codFilme),
 	constraint fk_filme_ator foreign key (idAtor) references ator,
 	constraint fk_ator_filme foreign key (codFilme) references filme
 );
