@@ -94,7 +94,7 @@ create table FISICO
 (
 	cod_proprietario integer,
 	cpf character varying (20),
-	constraint pk_fisico primary key (cod_proprietario, cpf),
+	constraint pk_fisico primary key (cod_proprietario),
 	constraint fk_Fisico_proprietario foreign key (cod_proprietario) references proprietario
 );
 
@@ -102,6 +102,6 @@ create table JURIDICO
 (
 	cod_proprietario integer,
 	cnpj character varying (30),
-	constraint pk_juridico primary key (cod_proprietario, cnpj),
+	constraint pk_juridico primary key (cod_proprietario),
 	constraint fk_Fisico_proprietario foreign key (cod_proprietario) references proprietario
 );
