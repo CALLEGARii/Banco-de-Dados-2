@@ -96,17 +96,20 @@ select nome from PAIS
 where nome like '%r%' or populacao < 10 or continente = 'Ásia'
 order by nome asc;
 
--- EX 13 --
-select nome from PAIS
-where nome like '%i%' and idh > 0.7 and populacao > 20;
+-- EX 12 --
+select nome from pais
+    where nome like '%i%' and idh > 0.7 and populacao > 20;
 
--- EX 14 --
-select nome from PAIS
-where SUBSTR(nome, length(nome) - 1, 1) = 'i' or idh between 0.4 and 0.7
-order by idh asc;
+-- EX 12 --
+select nome from pais
+    where nome like '%i' 
+    or idh between 0.4 and 0.7
+    order by idh asc;
 
--- EX 15 --
-select nome, continente, populacao from PAIS
-where nome like '%s%' and continente = 'África' and populacao between 10 and 30
-order by nome asc;
+-- EX 12 --
+select nome, continente, populacao from pais
+    where (nome like '%s%' or nome like '%s%') 
+    and continente = 'áfrica' 
+    and populacao between 10 and 30
+    order by nome asc;
 ---------------------------------------------------------------------------------
