@@ -96,17 +96,17 @@ select nome from PAIS
 where nome like '%r%' or populacao < 10 or continente = 'Ásia'
 order by nome asc;
 
--- EX 12 --
+-- EX 13 --
 select nome from pais
     where nome like '%i%' and idh > 0.7 and populacao > 20;
 
--- EX 12 --
+-- EX 14 --
 select nome from pais
     where nome like '%i' 
     or idh between 0.4 and 0.7
     order by idh asc;
 
--- EX 12 --
+-- EX 15 --
 select nome, continente, populacao from pais
     where (nome like '%s%' or nome like '%s%') 
     and continente = 'áfrica' 
