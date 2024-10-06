@@ -209,7 +209,6 @@ INSERT INTO cidadesBrasil
 INSERT INTO cidadesBrasil 
 	VALUES ('Brasília', 'DF', 2817381, 'Centro Oeste', 0.824, 97.5);
 
-
 -- EX1 --
 select continente , avg(idh) from pais
 group by continente
@@ -218,6 +217,32 @@ group by continente
 select continente, sum(populacao) from pais
 group by continente
 order by sum(populacao)
+
+-- EX3 --
+select continente, max(idh), min(idh) from pais
+group by continente
+having max(idh) > 0.4 and min(idh) < 0.94;
+
+-- EX4 --
+select regiao, avg(escolarizacao) from cidadesbrasil
+group by regiao
+order by avg(escolarizacao) desc
+
+-- EX5 --
+select siglaestado, max(idhm) from cidadesbrasil
+group by siglaestado
+order by max(idhm) desc
+
+-- EX6 --
+select regiao, round(sum(populacao)) as "total populacao" from cidadesbrasil
+group by regiao
+order by round(sum(populacao)) asc
+
+-- EX7 
+select siglaestado as Estado, avg(escolarizacao) as "Media Escolarizaçao" from cidadesbrasil
+group by siglaestado
+having avg(escolarizacao) > 95
+order by avg(escolarizacao) asc
 
 
 
