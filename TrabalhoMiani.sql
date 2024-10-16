@@ -68,4 +68,9 @@ INSERT INTO reservaslivro (isbn, prontuario, dtaRes, dtaRev) VALUES
 (978013476, '2023005', '2023-10-05', '2023-10-19');
 
 
+-- ex10 --
+select nomeCidade from cidadesbrasil
+where nomeCidade like 'a%' or 
+nomeCidade like '%r%' or 
+nomeCidade like '%i_';
 
