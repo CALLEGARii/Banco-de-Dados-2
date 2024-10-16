@@ -74,12 +74,12 @@ nomeCidade like '%r%' or
 nomeCidade like '%i_';
 
 --EX11 --
-select ator.nome, filme.nome from ator
+select ator.nome as "Ator", filme.nome as "Filme" from ator
 join atorestrelafilme on atorestrelafilme.idator = ator.idator
 join filme on filme.codfilme = atorestrelafilme.codfilme;
 
 --EX12 --
-select ator.nome, count(filme.nome) as "Quantidade_filme" from ator
+select ator.nome as "Ator", count(filme.nome) as "Quantidade_filme" from ator
 join atorestrelafilme on atorestrelafilme.idator = ator.idator
 join filme on filme.codfilme = atorestrelafilme.codfilme
 group by ator.nome;
@@ -94,6 +94,6 @@ join clientealugaexemplarfilme ON clientealugaexemplarfilme.codcliente = cliente
 join filme on clientealugaexemplarfilme.codFilme = filme.codFilme;
 
 -- EX15 --
-select cliente.nome, filme.nome, ator.nome from cliente
+select cliente.nome as "Clientes", filme.nome as "Filmes" , ator.nome from cliente
 join clientealugaexemplarfilme ON clientealugaexemplarfilme.codcliente = cliente.codcliente
 join clientealugaexemplarfilme on clientealugaexemplarfilme.codFilme = filme.CodFilme
