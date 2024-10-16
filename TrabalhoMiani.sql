@@ -67,10 +67,33 @@ INSERT INTO reservaslivro (isbn, prontuario, dtaRes, dtaRev) VALUES
 (978020163, '2023004', '2023-10-04', '2023-10-18'),
 (978013476, '2023005', '2023-10-05', '2023-10-19');
 
-
 -- ex10 --
 select nomeCidade from cidadesbrasil
 where nomeCidade like 'a%' or 
 nomeCidade like '%r%' or 
 nomeCidade like '%i_';
 
+--EX11 --
+select ator.nome, filme.nome from ator
+join atorestrelafilme on atorestrelafilme.idator = ator.idator
+join filme on filme.codfilme = atorestrelafilme.codfilme;
+
+--EX12 --
+select ator.nome, count(filme.nome) as "Quantidade_filme" from ator
+join atorestrelafilme on atorestrelafilme.idator = ator.idator
+join filme on filme.codfilme = atorestrelafilme.codfilme
+group by ator.nome;
+
+-- EX13 --
+select cliente.nome as "Clientes", telefone as "Telefones" from cliente
+join telefonecliente ON telefonecliente.codcliente = cliente.codcliente;
+
+--EX14 --
+select cliente.nome as "Clientes", filme.nome as "Filmes Alugados" from cliente
+join clientealugaexemplarfilme ON clientealugaexemplarfilme.codcliente = cliente.codcliente
+join filme on clientealugaexemplarfilme.codFilme = filme.codFilme;
+
+-- EX15 --
+select cliente.nome, filme.nome, ator.nome from cliente
+join clientealugaexemplarfilme ON clientealugaexemplarfilme.codcliente = cliente.codcliente
+join clientealugaexemplarfilme on clientealugaexemplarfilme.codFilme = filme.CodFilme
