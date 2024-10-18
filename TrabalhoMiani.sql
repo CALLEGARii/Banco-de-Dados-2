@@ -67,6 +67,32 @@ INSERT INTO reservaslivro (isbn, prontuario, dtaRes, dtaRev) VALUES
 (978020163, '2023004', '2023-10-04', '2023-10-18'),
 (978013476, '2023005', '2023-10-05', '2023-10-19');
 
+-- EX3 --
+update cidadesbrasil set idhm = 0.85 where nomecidade = 'florianópolis';
+
+-- EX4 --
+update cidadesbrasil set populacao = 900000 where nomecidade = 'teresina';
+
+-- EX5 --
+delete from cidadesbrasil where idhm < 0.5;
+
+-- EX6 --
+select * from cidadesbrasil where regiao = 'sul' or idhm > 0.7 order by idhm;
+
+-- EX7 --
+select nomecidade from cidadesbrasil where regiao = 'nordeste' and idhm between 0.5 and 0.8 
+	and populacao > 20000 order by populacao desc;
+
+-- EX8 --
+select regiao, count(nomecidade) from cidadesbrasil
+	group by regiao
+	order by regiao;
+
+-- EX9 --
+select regiao, sum(populacao) from cidadesbrasil
+	group by regiao
+	having sum(populacao) > 100000;
+
 -- ex10 --
 select nomeCidade from cidadesbrasil
 where nomeCidade like 'a%' or 
